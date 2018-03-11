@@ -19,7 +19,7 @@ trait Events
      */
     public static function trigger($name, $event = null)
     {
-        $class = self::className();
+        $class = self::class;
         Event::trigger($class, $name, $event);
     }
 
@@ -32,7 +32,7 @@ trait Events
      */
     public static function off($name, $handler = null)
     {
-        $class = self::className();
+        $class = self::class;
         Event::off($class, $name, $handler);
     }
 
@@ -47,7 +47,7 @@ trait Events
      */
     public static function on($name, $handler, $data = null)
     {
-        $class = self::className();
+        $class = self::class;
         Event::on($class, $name, $handler, $data);
     }
 }
