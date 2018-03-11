@@ -1,7 +1,7 @@
 <?php namespace api\base;
 
-use yii\base\Object;
-use yii\base\InvalidParamException;
+use yii\base\BaseObject;
+use yii\base\InvalidArgumentException;
 
 /**
  * Authorizing your bot:
@@ -17,7 +17,7 @@ use yii\base\InvalidParamException;
  * @property int id
  * @property string key
  */
-class Token extends Object
+class Token extends BaseObject
 {
 
     const PATTERN = '/\d+\:.*/';
@@ -74,6 +74,6 @@ class Token extends Object
         }
 
         $message = 'Invalid Token: ' . $token;
-        throw new InvalidParamException($message);
+        throw new InvalidArgumentException($message);
     }
 }
